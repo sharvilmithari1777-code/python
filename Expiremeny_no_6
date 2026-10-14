@@ -1,0 +1,99 @@
+# A file named "geek", will be opened with the reading mode
+file = open("geek.txt", "r")[cite: 1]
+
+# This will print every line one by one in the file
+for each in file:[cite: 1]
+    print(each)[cite: 1]
+
+file.close()
+
+# Python code to illustrate read() mode[cite: 1]
+file = open("file.txt", "r")[cite: 1]
+print(file.read())[cite: 1]
+
+file.close()
+
+# Python code to illustrate read() mode character wise[cite: 1]
+file = open("file.txt", "r")[cite: 1]
+print(file.read(5))[cite: 1]
+
+file.close()
+
+# Python code to create a file[cite: 1]
+file = open("geek.txt", "w")[cite: 1]
+file.write("This is the write command\n")[cite: 1]
+file.write("It allows us to write in a particular file\n")[cite: 1]
+file.close()[cite: 1]
+# Python code to illustrate append() mode
+file = open("geek.txt", "a")[cite: 2]
+file.write("This will add this line\n")[cite: 2]
+file.close()[cite: 2]
+
+# Python code to illustrate with()
+with open("file.txt") as file:[cite: 2]
+    data = file.read()[cite: 2]
+    # do something with data[cite: 2]
+    print(data)
+# Python code to illustrate with() along with write()[cite: 2]
+with open("file.txt", "w") as f:[cite: 2]
+    f.write("Hello World!!!")[cite: 2]
+
+import os[cite: 3]
+
+# 1. Getting the Current Working Directory (CWD)[cite: 3]
+current_dir = os.getcwd()  # os.getcwdb() returns a byte string[cite: 3]
+print("Current Directory:", current_dir)
+
+# 2. Creating a New Directory[cite: 3]
+os.mkdir("new_dir")  # creates in current working directory[cite: 3]
+# Example specifying path: os.mkdir(r"D:\new_dir")[cite: 3]
+
+# 3. Changing Current Working Directory[cite: 3]
+os.chdir("new_dir")[cite: 3]
+
+# 4. Listing Files and Directories[cite: 3]
+print(os.listdir())  # lists files/folders in CWD[cite: 3]
+
+# 5. Renaming a Directory or File[cite: 3]
+# os.rename(old_name, new_name)[cite: 3]
+# os.renames(old_name, new_name) moves renamed file to specified destination directory[cite: 3]
+os.rename("old_name", "new_name")[cite: 3]
+
+# 6. Removing an Empty Directory[cite: 3]
+os.rmdir("new_dir")  # raises OSError if directory is not empty[cite: 3]
+
+import os.path[cite: 4]
+import datetime[cite: 4]
+
+path = "geek.txt"
+
+# Check whether it is a directory[cite: 4]
+is_dir = os.path.isdir(path)[cite: 4]
+
+# Get size of file/directory in bytes[cite: 4]
+size_bytes = os.path.getsize(path)[cite: 4]
+
+# Access and modification times (epoch timestamps)[cite: 4]
+access_time = os.path.getatime(path)[cite: 4]
+mod_time = os.path.getmtime(path)[cite: 4]
+
+# Formatting timestamps into human-readable date/time[cite: 4]
+formatted_mod_time = datetime.datetime.fromtimestamp(mod_time)[cite: 4]
+
+import filecmp[cite: 4]
+
+# Compare two directories[cite: 4]
+d = filecmp.dircmp("dir_1", "dir_2", ignore=["a.txt", "b.txt"], hide=["c.txt", "d.txt"])[cite: 4]
+
+# Print comparison reports[cite: 4]
+d.report()                 # Compares the two directories and common sub-directories[cite: 4]
+d.report_partial_closure() # Compares directories and common immediate sub-directories[cite: 4]
+d.report_full_closure()    # Recursively compares all sub-directories[cite: 4]
+
+import tempfile[cite: 4]
+
+# Create a temporary directory using mkdtemp()[cite: 4]
+temp_dir = tempfile.mkdtemp(suffix="_tmp", prefix="my_dir_")[cite: 4]
+print("Temporary directory created at:", temp_dir)[cite: 4]
+
+# Note: The creator is responsible for deleting the temp directory upon completion.[cite: 4]

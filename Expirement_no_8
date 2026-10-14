@@ -1,0 +1,197 @@
+# A Python program to demonstrate inheritance[cite: 13]
+class Person(object):[cite: 13]
+    # Constructor[cite: 13]
+    def __init__(self, name, id):[cite: 13]
+        self.name = name[cite: 13]
+        self.id = id[cite: 13]
+
+    # To check if this person is an employee[cite: 13]
+    def Display(self):[cite: 13]
+        print(self.name, self.id)[cite: 13]
+
+# Driver code for parent class[cite: 13]
+emp = Person("Satyam", 102)  # An Object of Person[cite: 14]
+emp.Display()[cite: 14]
+
+
+# Creating a Child Class[cite: 14]
+class Emp(Person):[cite: 14]
+    def Print(self):[cite: 14]
+        print("Emp class called")[cite: 14]
+
+# Driver code for child class[cite: 14]
+Emp_details = Emp("Mayank", 103)[cite: 14]
+
+# Calling parent class function[cite: 14]
+Emp_details.Display()[cite: 14]
+
+# Calling child class function[cite: 14]
+
+# A Python program to demonstrate inheritance[cite: 14]
+# Base or Super class. Note object in bracket.[cite: 14]
+class Person(object):[cite: 14]
+    # Constructor[cite: 14]
+    def __init__(self, name):[cite: 14]
+        self.name = name[cite: 14]
+
+    # To get name[cite: 14]
+    def getName(self):[cite: 15]
+        return self.name[cite: 15]
+
+    # To check if this person is an employee[cite: 15]
+    def isEmployee(self):[cite: 15]
+        return False[cite: 15]
+
+# Inherited or Subclass[cite: 15]
+class Employee(Person):[cite: 15]
+    # Here we return true[cite: 15]
+    def isEmployee(self):[cite: 15]
+        return True[cite: 15]
+
+# Driver code[cite: 15]
+emp = Person("Geek1")  # An Object of Person[cite: 15]
+print(emp.getName(), emp.isEmployee())[cite: 15]
+
+emp = Employee("Geek2")  # An Object of Employee[cite: 15]
+print(emp.getName(), emp.isEmployee())[cite: 15]
+# Python program to demonstrate single inheritance[cite: 16]
+
+# Base class[cite: 16]
+class Parent:[cite: 16]
+    def func1(self):[cite: 16]
+        print("This function is in parent class.")[cite: 16]
+
+# Derived class[cite: 16]
+class Child(Parent):[cite: 16]
+    def func2(self):[cite: 16]
+        print("This function is in child class.")[cite: 16]
+
+# Driver's code[cite: 16]
+object = Child()[cite: 16]
+object.func1()[cite: 16]
+object.func2()[cite: 16]
+
+# Python program to demonstrate multiple inheritance[cite: 17]
+
+# Base class 1[cite: 17]
+class Mother:[cite: 17]
+    mothername = ""[cite: 17]
+
+    def mother(self):[cite: 17]
+        print(self.mothername)[cite: 17]
+
+# Base class 2[cite: 17]
+class Father:[cite: 17]
+    fathername = ""[cite: 17]
+
+    def father(self):[cite: 17]
+        print(self.fathername)[cite: 17]
+
+# Derived class[cite: 18]
+class Son(Mother, Father):[cite: 18]
+    def parents(self):[cite: 18]
+        print("Father :", self.fathername)[cite: 18]
+        print("Mother :", self.mothername)[cite: 18]
+
+# Driver's code[cite: 18]
+s1 = Son()[cite: 18]
+s1.fathername = "RAM"[cite: 18]
+s1.mothername = "SITA"[cite: 18]
+s1.parents()[cite: 18]
+
+# Python program to demonstrate multilevel inheritance[cite: 18]
+
+# Base class[cite: 19]
+class Grandfather:[cite: 19]
+    def __init__(self, grandfathername):[cite: 19]
+        self.grandfathername = grandfathername[cite: 19]
+
+# Intermediate class[cite: 19]
+class Father(Grandfather):[cite: 19]
+    def __init__(self, fathername, grandfathername):[cite: 19]
+        self.fathername = fathername[cite: 19]
+        # invoking constructor of Grandfather class[cite: 19]
+        Grandfather.__init__(self, grandfathername)[cite: 19]
+
+# Derived class[cite: 19]
+class Son(Father):[cite: 19]
+    def __init__(self, sonname, fathername, grandfathername):[cite: 19]
+        self.sonname = sonname[cite: 19]
+        # invoking constructor of Father class[cite: 19]
+        Father.__init__(self, fathername, grandfathername)[cite: 19]
+
+    def print_name(self):[cite: 19]
+        print("Grandfather name :", self.grandfathername)[cite: 19]
+        print("Father name :", self.fathername)[cite: 19]
+        print("Son name :", self.sonname)[cite: 19]
+
+# Driver code[cite: 19]
+s1 = Son("Prince", "Rampal", "Lal mani")[cite: 19]
+print(s1.grandfathername)[cite: 19]
+s1.print_name()[cite: 19]
+
+# Python program to demonstrate Hierarchical inheritance[cite: 20]
+
+# Base class[cite: 20]
+class Parent:[cite: 20]
+    def func1(self):[cite: 20]
+        print("This function is in parent class.")[cite: 20]
+
+# Derived class 1[cite: 20]
+class Child1(Parent):[cite: 20]
+    def func2(self):[cite: 20]
+        print("This function is in child 1.")[cite: 20]
+
+# Derived class 2[cite: 20]
+class Child2(Parent):[cite: 20]
+    def func3(self):[cite: 20]
+        print("This function is in child 2.")[cite: 20]
+
+# Driver's code[cite: 20]
+object1 = Child1()[cite: 20]
+object2 = Child2()[cite: 20]
+
+object1.func1()[cite: 20]
+object1.func2()[cite: 20]
+object2.func1()[cite: 20]
+object2.func3()[cite: 20]
+
+# Python program to demonstrate hybrid inheritance[cite: 21]
+
+class School:[cite: 21]
+    def func1(self):[cite: 21]
+        print("This function is in school.")[cite: 21]
+
+class Student1(School):[cite: 21]
+    def func2(self):[cite: 21]
+        print("This function is in student 1.")[cite: 21]
+
+class Student2(School):[cite: 21]
+    def func3(self):[cite: 21]
+        print("This function is in student 2.")[cite: 21]
+
+class Student3(Student1, School):[cite: 21]
+    def func4(self):[cite: 21]
+        print("This function is in student 3.")[cite: 21]
+
+# Driver's code[cite: 21]
+object = Student3()[cite: 21]
+object.func1()[cite: 22]
+object.func2()[cite: 22]
+
+# Python program to demonstrate in-built polymorphic functions[cite: 22]
+
+# len() being used for a string[cite: 22]
+print(len("geeks"))[cite: 22]
+
+# len() being used for a list[cite: 22]
+print(len([10, 20, 30]))[cite: 22]
+
+# A simple Python function to demonstrate Polymorphism[cite: 22]
+def add(x, y, z=0):[cite: 22]
+    return x + y + z[cite: 22]
+
+# Driver code[cite: 22]
+print(add(2, 3))[cite: 22]
+print(add(2, 3, 4))[cite: 22]
+Emp_details.Print()[cite: 14]

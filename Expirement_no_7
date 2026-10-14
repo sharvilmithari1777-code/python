@@ -1,0 +1,172 @@
+# Python3 program to demonstrate defining a class
+class Dog:
+    pass
+# Python3 program to demonstrate instantiating a class
+class Dog:
+    # A simple class attribute
+    attr1 = "mammal"
+    attr2 = "dog"
+
+    # A sample method
+    def fun(self):
+        print("I'm a", self.attr1)
+        print("I'm a", self.attr2)
+
+# Driver code
+# Object instantiation
+Rodger = Dog()
+
+# Accessing class attributes and method through objects
+print(Rodger.attr1)
+Rodger.fun()
+# A Sample class with init method
+class Person:
+    # init method or constructor
+    def __init__(self, name):
+        self.name = name
+
+    # Sample Method
+    def say_hi(self):
+        print("Hello, my name is", self.name)
+
+p = Person("Nikhil")
+p.say_hi()
+# Class for Dog
+class Dog:
+    # Class Variable
+    animal = "dog"
+
+    # The init method or constructor
+    def __init__(self, breed, color):
+        # Instance Variable
+        self.breed = breed
+        self.color = color
+
+# Objects of Dog class
+Rodger = Dog("Pug", "brown")
+Buzo = Dog("Bulldog", "black")
+
+print("Rodger details:")
+print("Rodger is a", Rodger.animal)
+print("Breed: ", Rodger.breed)
+print("Color: ", Rodger.color)
+
+print("\nBuzo details:")
+print("Buzo is a", Buzo.animal)
+print("Breed: ", Buzo.breed)
+print("Color: ", Buzo.color)
+
+# Class variables can be accessed using class name also
+print("\nAccessing class variable using class name")
+print(Dog.animal)
+# Python3 program to show that we can create instance variables inside methods
+class Dog:
+    # Class Variable
+    animal = "dog"
+
+    # The init method or constructor
+    def __init__(self, breed):
+        # Instance Variable
+        self.breed = breed
+
+    # Adds an instance variable
+    def setColor(self, color):
+        self.color = color
+
+    # Retrieves instance variable
+    def getColor(self):
+        return self.color
+
+# Driver Code
+Rodger = Dog("pug")
+Rodger.setColor("brown")
+print(Rodger.getColor())
+# Example of default constructor
+class Demo:
+    # default constructor
+    def __init__(self):
+        self.Demo = "CSE Dept"
+
+    # a method for printing data members
+    def print_Demo(self):
+        print(self.Demo)
+
+# creating object of the class
+obj = Demo()
+
+# calling the instance method using the object obj
+obj.print_Demo()
+# Example of the parameterized constructor
+class Addition:
+    first = 0
+    second = 0
+    answer = 0
+
+    # parameterized constructor
+    def __init__(self, f, s):
+        self.first = f
+        self.second = s
+
+    def calculate(self):
+        self.answer = self.first + self.second
+
+    def display(self):
+        print("First number = " + str(self.first))
+        print("Second number = " + str(self.second))
+        print("Addition of two numbers = " + str(self.answer))
+
+# creating object of the class (invokes parameterized constructor)
+obj = Addition(1000, 2000)
+
+# perform Addition
+obj.calculate()
+
+# display result
+obj.display()
+# Python program to illustrate destructor
+class Employee:
+    # Initializing
+    def __init__(self):
+        print("Employee created.")
+
+    # Deleting (Calling destructor)
+    def __del__(self):
+        print("Destructor called, Employee deleted.")
+
+obj = Employee()
+del obj
+# Python program to illustrate destructor lifecycle
+class Employee:
+    # Initializing
+    def __init__(self):
+        print("Employee created")
+
+    # Calling destructor
+    def __del__(self):
+        print("Destructor called")
+
+def Create_obj():
+    print("Making Object...")
+    obj = Employee()
+    print("function end...")
+    return obj
+
+print("Calling Create_obj() function...")
+obj = Create_obj()
+print("Program End...")
+# Python program to illustrate circular references with destructor
+class A:
+    def __init__(self, bb):
+        self.b = bb
+
+class B:
+    def __init__(self):
+        self.a = A(self)
+
+    def __del__(self):
+        print("die")
+
+def fun():
+    b = B()
+
+fun()

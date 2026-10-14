@@ -1,0 +1,108 @@
+def welcome():
+    print("Welcome to Python Lab")
+
+welcome()
+welcome()      # same code reused
+
+# Example 2: Print a multiplication table
+def table():
+    for i in range(1, 6):
+        print(5 * i)
+table()
+
+# 2. Defining a Function (def keyword)
+# Example 1: Function with no parameters python
+def say_hello():
+    print("Hello, World!")
+
+say_hello()
+
+# Example 2: Function with a docstring python
+def college():
+    """This function prints the college name"""
+    print("ABC College of Engineering")
+college()
+print(college.__doc__)
+# 3. Function Parameters (passing values)
+# Example 1: Positional parameters python
+def student(name, age):
+    print("Name:", name)
+    print("Age:", age)
+
+student("Rahul", 20)
+
+# Example 2: Default and keyword arguments
+
+# python
+def student(name, course="B.Tech"):
+    print(name, "is studying", course)
+
+student("Sneha")                        # uses default
+student(course="BCA", name="Amit")      # keyword arguments
+# 4. Return Statement (returning a result)
+
+# Example 1: Return a single value
+
+#python
+def square(n):
+    return n * n
+
+result = square(8)
+print("Square:", result)
+
+# Example 2: Return multiple values
+
+#python
+def calculate(a, b):
+    return a + b, a - b, a * b
+
+s, d, m = calculate(10, 5)
+print("Sum:", s)
+print("Difference:", d)
+print("Product:", m)
+# 5. Lambda Functions (small anonymous functions)
+
+# Example 1: Basic lambda
+
+# python
+add = lambda a, b: a + b
+print("Sum:", add(10, 20))
+
+# Example 2: Lambda with filter() and map()
+
+# python
+nums = [1, 2, 3, 4, 5, 6]
+print("Even:", list(filter(lambda x: x % 2 == 0, nums)))
+print("Doubled:", list(map(lambda x: x * 2, nums)))
+# 6. Difference Between Functions and Lambda Functions
+
+#Example 1: The same task written both ways
+
+#python
+# Normal function
+def cube(x):
+    return x ** 3
+
+# Lambda function
+cube_lambda = lambda x: x ** 3
+
+print(cube(3))
+print(cube_lambda(3))
+
+# Example 2: When each is a better fit
+
+#python
+# Normal function: needed for multiple statements
+def grade(marks):
+    if marks >= 75:
+        return "Distinction"
+    elif marks >= 40:
+        return "Pass"
+    else:
+        return "Fail"
+
+print(grade(80))
+
+# Lambda: good for short, one-time use (here as a sorting key)
+students = [("Amit", 80), ("Sneha", 92), ("Ravi", 75)]
+print(sorted(students, key=lambda s: s[1]))

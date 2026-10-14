@@ -1,0 +1,202 @@
+# --- String Basics ---
+String1 = "GeeksForGeeks"
+print("Initial String: ")
+print(String1)
+
+# Printing First character
+print("\nFirst character of String is: ")
+print(String1[0])
+
+# Printing Last character
+print("\nLast character of String is: ")
+print(String1[-1])
+
+# --- Reversing a Python String ---
+# Method 1: Slicing
+gfg = "geeksforgeeks"
+print(gfg[::-1])
+
+# Method 2: join() and reversed()
+gfg = "geeksforgeeks"
+gfg = "".join(reversed(gfg))
+print(gfg)
+
+# --- String Slicing ---
+String1 = "GeeksForGeeks"
+print("Initial String: ")
+print(String1)
+
+# Printing 3rd to 12th character
+print("\nSlicing characters from 3-12: ")
+print(String1[3:12])
+
+# Printing characters between 3rd and 2nd last character
+print("\nSlicing characters between 3rd and 2nd last character: ")
+print(String1[3:-2])
+
+# --- Updating a character of the String ---
+String1 = "Hello, I'm a Geek"
+print("Initial String: ")
+print(String1)
+
+# Method 1: Converting to a list
+list1 = list(String1)
+list1[2] = 'p'
+String2 = "".join(list1)
+print("\nUpdating character at 2nd Index: ")
+print(String2)
+
+# Method 2: Slicing and concatenation
+String3 = String1[0:2] + 'p' + String1[3:]
+print(String3)
+
+# --- Formatting of Strings ---
+# Default order
+String1 = "{} {} {}".format('Geeks', 'For', 'Life')
+print("Print String in default order: ")
+print(String1)
+
+# Positional Formatting
+String1 = "{1} {0} {2}".format('Geeks', 'For', 'Life')
+print("\nPrint String in Positional order: ")
+print(String1)
+
+# Keyword Formatting
+String1 = "{l} {f} {g}".format(g='Geeks', f='For', l='Life')
+print("\nPrint String in order of Keywords: ")
+print(String1)
+
+# --- Set Type & Duplicates ---
+var = {"Geeks", "for", "Geeks"}
+print(type(var))
+
+myset = {"Geeks", "for", "Geeks"}
+print(myset)
+
+# Note: Sets are unindexed, so myset[1] = "Hello" will raise a TypeError:
+# myset[1] = "Hello"
+
+# Heterogeneous Element with Python Set
+myset = {"Geeks", "for", 10, 52.7, True}
+print(myset)
+
+# --- Python Frozen Sets ---
+# Normal set vs Frozen set
+normal_set = set(["a", "b", "c"])
+print("Normal Set")
+print(normal_set)
+
+frozen_set = frozenset(["e", "f", "g"])
+print("\nFrozen Set")
+print(frozen_set)
+
+# --- Adding elements to Python Sets ---
+people = {"Jay", "Idrish", "Archi"}
+print("People:", end=" ")
+print(people)
+
+# Adding a single item
+people.add("Daxit")
+
+# Adding elements to the set using iterator
+for i in range(1, 6):
+    people.add(i)
+
+print("\nSet after adding element:", end=" ")
+print(people)
+
+# --- Union Operation on Python Sets ---
+people = {"Jay", "Idrish", "Archil"}
+vampires = {"Karan", "Arjun"}
+dracula = {"Deepanshu", "Raju"}
+
+# Union using union() function
+population = people.union(vampires)
+print("Union using union() function")
+print(population)
+
+# Union using '|' operator
+population = people | dracula
+print("\nUnion using '|' operator")
+print(population)
+
+# --- Intersection Operation on Python Sets ---
+set1 = set()
+set2 = set()
+
+for i in range(5):
+    set1.add(i)
+
+for i in range(3, 9):
+    set2.add(i)
+
+# Intersection using intersection() function
+set3 = set1.intersection(set2)
+print("Intersection using intersection() function")
+print(set3)
+
+# Intersection using '&' operator
+set3 = set1 & set2
+print("\nIntersection using '&' operator")
+print(set3)
+
+# --- Finding Differences of Sets in Python ---
+set1 = set()
+set2 = set()
+
+for i in range(5):
+    set1.add(i)
+
+for i in range(3, 9):
+    set2.add(i)
+
+# Difference using difference() function
+set3 = set1.difference(set2)
+print("Difference of two sets using difference() function")
+print(set3)
+
+# Difference using '-' operator
+set3 = set1 - set2
+print("\nDifference of two sets using '-' operator")
+print(set3)
+
+# --- Clearing Python Sets ---
+set1 = {1, 2, 3, 4, 5, 6}
+print("Initial set")
+print(set1)
+
+set1.clear()
+print("\nSet after using clear() function")
+print(set1)
+
+# --- Creating a Dictionary with Mixed Keys ---
+Dict = {'Name': 'Geeks', 1: [1, 2, 3, 4]}
+print("\nDictionary with the use of Mixed Keys: ")
+print(Dict)
+
+# --- Adding elements to a Dictionary ---
+Dict = {}
+print("Empty Dictionary: ")
+print(Dict)
+
+# Adding elements one at a time
+Dict[0] = 'Geeks'
+Dict[2] = 'For'
+Dict[3] = 1
+print("\nDictionary after adding 3 elements: ")
+print(Dict)
+
+# Adding set of values to a single key (stored as a tuple)
+Dict['Value_set'] = 2, 3, 4
+print("\nDictionary after adding 3 elements: ")
+print(Dict)
+
+# Updating existing Key's Value
+Dict[2] = 'Welcome'
+print("\nUpdated key value: ")
+print(Dict)
+
+# Adding Nested Key value to Dictionary
+Dict[5] = {'Nested': {'1': 'Life', '2': 'Geeks'}}
+print("\nAdding a Nested Key: ")
+print(Dict)
